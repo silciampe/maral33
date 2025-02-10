@@ -73,6 +73,12 @@ a, a:hover {
   width: 100%;
 }
 
+.owl-carousel .untree_co--site-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
 .recomendaciones {
   background: #ffffff; /* Fondo blanco */
   padding: 40px;
