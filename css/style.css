@@ -74,10 +74,17 @@ a, a:hover {
 }
 
 .owl-carousel .untree_co--site-hero {
-  min-height: 50vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
+
+.untree_co--site-hero,
+.untree_co--site-hero > .container > .row {
+  height: 60vh;
+  min-height: 260px;
+}
+
 
 .recomendaciones {
   background: #ffffff; /* Fondo blanco */
@@ -149,11 +156,6 @@ a, a:hover {
   color: black;
 }
 
-.tamanio {
-  
-  width: 75%;
-  height: 50px;
-}
 
 .search-wrap {
   width: 100%;
@@ -284,9 +286,19 @@ a, a:hover {
   background-repeat: no-repeat;
 }
 
-.untree_co--site-hero, .untree_co--site-hero > .container > .row {
-  height: 50vh;
-  min-height: 200px;
+.untree_co--site-hero,
+.untree_co--site-hero > .container > .row {
+  height: 70vh;
+  min-height: 320px;
+}
+
+/* En pantallas chicas, un poco menos alto para que no sea tan enorme */
+@media (max-width: 767.98px) {
+  .untree_co--site-hero,
+  .untree_co--site-hero > .container > .row {
+    height: 60vh;
+    min-height: 260px;
+  }
 }
 
 .untree_co--site-hero.overlay {
@@ -300,7 +312,7 @@ a, a:hover {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .untree_co--site-hero .site-hero-contents {
@@ -317,14 +329,14 @@ a, a:hover {
 .untree_co--site-hero .site-hero-contents .hero-heading {
   font-size: 5rem;
   color: #fff;
-  line-height: 0;
+  line-height: 1.1;
   font-family: "Cormorant Garamond", serif;
   font-weight: 900;
 }
 
 @media (max-width: 991.98px) {
   .untree_co--site-hero .site-hero-contents .hero-heading {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -2094,4 +2106,90 @@ footer .form-subscribe .form-control:active, footer .form-subscribe .form-contro
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/* ==== ESPACIOS LATERALES EN TEXTOS (sobre todo mobile) ==== */
+
+/* En general, que las secciones tengan más aire horizontal en pantallas chicas */
+@media (max-width: 767.98px) {
+  .untree_co--site-section .container,
+  .featured-rooms .container,
+  .featured-rooms .container-fluid,
+  .recomendaciones {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Que las listas no se peguen tanto al borde */
+  .ul-check {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ul-check li {
+    padding-left: 30px;
+  }
+}
+
+/* Aseguramos centrar títulos importantes */
+.untree_co--site-section h2,
+.untree_co--site-section h3,
+.recomendaciones h2,
+.recomendaciones h5 {
+  text-align: center;
+}
+
+/* Para el bloque de “Reglas del alquiler” y “Recomendaciones” que queden más ordenados */
+.recomendaciones {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+/* ==== HERO "GLASS" CARD + BOTÓN CTA ==== */
+
+.hero-card {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);          /* efecto glassmorphism */
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-card .sub-text p {
+  margin-bottom: 1rem;
+}
+
+/* Botón principal de acción */
+.btn-cta {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+.btn-cta:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  color: #e8ffef !important;
+}
+
+/* Ajuste en mobile para que no quede gigante */
+@media (max-width: 767.98px) {
+  .hero-card {
+    padding: 1.2rem 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .btn-cta {
+    width: 100%;
+    max-width: 280px;
+  }
 }
