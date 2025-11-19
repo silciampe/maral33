@@ -459,7 +459,7 @@ a, a:hover {
   position: absolute;
   width: 100%;
   text-align: center;
-  bottom: 50px;
+  bottom: 20px;
 }
 
 .owl-hero .owl-dots .owl-dot {
@@ -2149,35 +2149,38 @@ footer .form-subscribe .form-control:active, footer .form-subscribe .form-contro
 
 .hero-card {
   display: inline-block;
-  padding: 1.5rem 2rem;
-  border-radius: 18px;
+  padding: 0.9rem 1.4rem;       /* antes era más grande */
+  border-radius: 16px;
   background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);          /* efecto glassmorphism */
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  max-width: 520px;             /* para que no se haga tan ancha */
 }
 
 .hero-card .sub-text p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
+
 
 /* Botón principal de acción */
 .btn-cta {
   display: inline-block;
-  padding: 0.7rem 1.6rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background-color: #25D366;   /* mismo verde que el botón flotante */
   color: #fff !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .btn-cta:hover {
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  background-color: #128C7E;   /* mismo hover que el flotante */
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   color: #e8ffef !important;
 }
 
@@ -2193,3 +2196,9 @@ footer .form-subscribe .form-control:active, footer .form-subscribe .form-contro
     max-width: 280px;
   }
 }
+
+/* Menos espacio arriba de "Fotos del lugar" */
+.featured-rooms.untree_co--site-section {
+  padding-top: 4rem;   /* en lugar de 7rem */
+}
+
